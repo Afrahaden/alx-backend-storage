@@ -3,8 +3,6 @@
 import redis
 import uuid
 from typing import Union, Callable
-
-
 class Cache:
     """A redis cache class
     Args:  _redis: private instance of the Redis client
@@ -12,7 +10,6 @@ class Cache:
     def __init__(self):
         self._redis = redis.Redis()
         self._redis.flushdb()
-
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """Stores input data in Redis using a random key
         """
